@@ -6,10 +6,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-	@GetMapping("/")
-	public String hello() {
-		return "Hello from spring boot";
-	}
+
+@GetMapping("/api/project")
+public message getProject() {
+    return new message(
+        "My Website",
+        "React + Spring Boot",
+        "In Progress"
+    );
+}
+
 	
+	
+	public record message(String message, String project, String Status) {
+		
+	}
 	
 }
